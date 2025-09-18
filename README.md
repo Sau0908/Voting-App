@@ -40,5 +40,6 @@ This app allows users to register, create polls, cast votes, and see live result
 ### If you have the Live Server extension for VS Code:
 
 ### Right-click on test.websocket.html and select "Open with Live Server"
+Simply enter the poll id to join the room and see live result.
 
 ### use tableplus for the db view (optional)
