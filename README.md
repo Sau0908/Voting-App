@@ -27,9 +27,9 @@ This app allows users to register, create polls, cast votes, and see live result
 3. **Configure environment variables**
    Create a .env file in the root directory:
 
-DATABASE_URL="postgresql://<user>:<password>@localhost:5432/voting_db?schema=public"
-PORT=8080
-JWT_SECRET="test"
+    DATABASE_URL="postgresql://<user>:<password>@localhost:5432/voting_db?schema=public"
+    PORT=8080
+    JWT_SECRET="test"
 
 4. **Run database migrations**
    npm run db:migrate
@@ -37,8 +37,8 @@ JWT_SECRET="test"
 5. **Start the server**
    npm run start
 
-# If you have the Live Server extension for VS Code:
+### If you have the Live Server extension for VS Code:
 
-# Right-click on test.websocket.html and select "Open with Live Server"
+### Right-click on test.websocket.html and select "Open with Live Server"
 
-# use tableplus for the db view (optional)
+### use tableplus for the db view (optional)
