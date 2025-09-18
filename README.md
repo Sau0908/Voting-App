@@ -18,7 +18,7 @@ This app allows users to register, create polls, cast votes, and see live result
 ## Setup Instructions
 
 1. **Clone the repository**
-   git clone https://github.com/your-username/voting-app.git
+   git clone [https://github.com/your-username/voting-app.git](https://github.com/Sau0908/Voting-App.git)
    cd voting-app
 
 2. **Install dependencies**
