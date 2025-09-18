@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Poll WebSocket Test</title>
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+  </head>
+  <body>
+    <h1>Poll WebSocket Test</h1>
+
+    <div>
+      <label for="pollId">Poll ID: </label>
+      <input id="pollId" value="enter pollId here" size="40" />
+      <button onclick="joinPoll()">Join Poll</button>
+    </div>
+
+    <pre id="log"></pre>
+
+    <script>
+      const socket = io("http://localhost:8080");
+
+      function log(message, data) {
+        const logBox = document.getElementById("log");
+        logBox.textContent +=
+          message + (data ? " " + JSON.stringify(data, null, 2) : "") + "\n";
+      }
+
+      socket.on("connect", () => {
+        log("Connected to WebSocket server with ID:", socket.id);
+      });
+
+      socket.on("disconnect", () => {
+        log("Disconnected from server");
+      });
+
+      socket.on("pollUpdated", (data) => {
+        log("Poll updated:", data);
+      });
+
+      function joinPoll() {
+        const pollId = document.getElementById("pollId").value;
+        socket.emit("join_poll", pollId);
+        log("Joined poll room:", pollId);
+      }
+    </script>
+  </body>
+</html>
